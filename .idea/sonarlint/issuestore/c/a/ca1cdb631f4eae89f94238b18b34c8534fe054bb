@@ -1,0 +1,13 @@
+
+g	java:S1129"FDefine and throw a dedicated exception instead of using a generic one.(àøû—úÿÿÿÿ8º˜‡¿²1
+g	java:S112?"FDefine and throw a dedicated exception instead of using a generic one.(•„şåúÿÿÿÿ8¿¥ÄŞ²1
+P
+java:S2755("3Disable access to external entities in XML parsing.(ÄùÙî8É˜‡¿²1
+P
+java:S2755]"3Disable access to external entities in XML parsing.(ÄùÙî8¤¦©Ş²1
+P
+java:S1874H"3Remove this use of "newInstance"; it is deprecated.(¸‘ª8ë¦ÄŞ²1
+U
+java:S1874J"3Remove this use of "newInstance"; it is deprecated.(…•»øúÿÿÿÿ8ì¦ÄŞ²1
+a
+java:S1128"DRemove this unused import 'com.root.mybatis.type.TypeAliasRegistry'.(ş½ãş8÷¦ÄŞ²1
