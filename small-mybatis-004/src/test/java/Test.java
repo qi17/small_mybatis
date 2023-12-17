@@ -22,7 +22,14 @@ import java.io.Reader;
 public class Test {
     private Logger logger =  LoggerFactory.getLogger(Test.class);
 
-
+    @org.junit.Test
+    public void test_SqlSessionFactory_1() throws IOException {
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsReader("mybatis-config-datasource.xml"));
+        SqlSession sqlSession = sqlSessionFactory.openSqlSession();
+        IUserDao mapper = sqlSession.getMapper(IUserDao.class);
+        User user = mapper.queryUserInfoById(1L);
+        logger.info("测试结果：{}",JSON.toJSONString(user));
+    }
 
     @org.junit.Test
     public void test_SqlSessionFactory() throws IOException {

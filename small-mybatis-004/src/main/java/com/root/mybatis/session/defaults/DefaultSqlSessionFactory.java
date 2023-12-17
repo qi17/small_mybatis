@@ -1,9 +1,14 @@
 package com.root.mybatis.session.defaults;
 
 import com.root.mybatis.binding.MapperRegistry;
+import com.root.mybatis.executor.Executor;
+import com.root.mybatis.mapping.Environment;
 import com.root.mybatis.session.Configuration;
 import com.root.mybatis.session.SqlSession;
 import com.root.mybatis.session.SqlSessionFactory;
+import com.root.mybatis.session.TransactionIsolationLevel;
+import com.root.mybatis.transaction.Transaction;
+import com.root.mybatis.transaction.TransactionFactory;
 
 /**
  * @author root
@@ -19,6 +24,10 @@ public class DefaultSqlSessionFactory implements SqlSessionFactory {
 
     @Override
     public SqlSession openSqlSession() {
-        return new DefaultSqlSession(configuration);
+        Environment environment = configuration.getEnvironment();
+        TransactionFactory transactionFactory = environment.getTransactionFactory();
+        Transaction tx = transactionFactory.newTransaction(configuration.getEnvironment().getDataSource(), TransactionIsolationLevel.READ_COMMITTED, false);
+        final Executor executor = configuration.newExecutor(tx);
+        return  new DefaultSqlSession(configuration,executor);
     }
 }
