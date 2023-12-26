@@ -3,6 +3,7 @@ package com.root.mybatis.reflection.wrapper;
 
 
 import com.root.mybatis.reflection.MetaObject;
+import com.root.mybatis.reflection.SystemMetaObject;
 import com.root.mybatis.reflection.factory.ObjectFactory;
 import com.root.mybatis.reflection.property.PropertyTokenizer;
 
